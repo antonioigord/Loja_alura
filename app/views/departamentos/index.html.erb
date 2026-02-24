@@ -1,0 +1,48 @@
+<p class="text-success"><%= notice %></p>
+
+<% content_for :title, "Departamentos" %>
+
+<div class="container mt-4">
+
+  <h1 class="mb-4">Departamentos</h1>
+
+  <table class="table table-bordered table-hover">
+    <thead class="table-light">
+      <tr>
+        <th>Nome</th>
+        <th class="text-center">Show</th>
+        <th class="text-center">Edit</th>
+        <th class="text-center">Destroy</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @departamentos.each do |departamento| %>
+        <tr>
+          <td><%= departamento.nome %></td>
+
+          <td class="text-center">
+            <%= link_to "Ver produtos", departamento, class: "btn btn-default" %>
+          </td>
+
+          <td class="text-center">
+            <%= link_to "Editar", edit_departamento_path(departamento), class: "btn btn-sm btn-outline-secondary" %>
+          </td>
+
+          <td class="text-center">
+            <%= link_to "Deletar",
+                        departamento,
+                        method: :delete,
+                        data: { confirm: "Tem certeza que deseja deletar?" },
+                        class: "btn btn-sm btn-outline-danger" %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <%= link_to "New Departamento",
+              new_departamento_path,
+              class: "btn btn-success mt-3" %>
+
+</div>

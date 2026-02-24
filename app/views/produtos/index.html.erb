@@ -1,0 +1,53 @@
+<div class="navbar navbar-light bg-light mb-4">
+    
+    <%if flash[:notice]%>
+        <div class="alert alert-sucess"role="alert">
+            <%= flash[:notice]%>
+        </div>
+    <%end%>
+    <table class="table table-bordered table-hover">
+        <thead class="table-light">
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Departamento</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+                <th colspan="2"/th>
+            </tr>
+        </thead>
+        <tbody>
+        <%= render @produtos %>
+        </tbody>
+    </table>
+    
+    <div class="alert alert-success mt-4" role="alert">
+        <h5 class="m-0 fw-bold text-success">
+            Produto com desconto
+        </h5>
+    </div>
+    
+    <table class="table table-bordered table-hover">
+        <thead class="table-light">
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Departamento</th>
+                <th>Preço</th>
+                <th>Quantidade</th>
+            </tr>
+        </thead>
+        <tbody>
+        <% @produto_com_desconto.each do |produto| %>
+            <tr>
+                <td><%= produto.nome %></td>
+                <td><%= produto.descricao %></td>
+                <td><%= produto.departamento.nome %></td>
+                <td><%= produto.preco %></td>
+                <td><%= produto.quantidade %></td>
+
+            </tr>
+        <% end %>
+        </tbody>
+    </table>
+</div>
