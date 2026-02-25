@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-gem 'rails-i18n', '~> 8.0.0' # For Rails >= 8.0.0
+gem 'rails-i18n', '~> 8.1.0' # For Rails >= 8.0.0
 
 gem "twitter-bootstrap-rails"
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
